@@ -34,7 +34,7 @@ public class DefaultController {
 
         return "overview";
     }
-
+//The preparedstatement in the controller//
     @RequestMapping(value = "/addItem", method = RequestMethod.POST)
     public String addItem(ModelMap map, HttpServletRequest request) {
 

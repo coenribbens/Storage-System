@@ -36,7 +36,7 @@
         <div class="container-fluid">
 
             <div class="well">
-                <!--The button for adding stuff-->
+                <!--The button for items-->
                 <button type="button" class="btn btn-info" data-toggle="modal" data-target="#addmodal">Add item</button>
             </div>
 
@@ -74,12 +74,15 @@
                         </div>
                         <div class="modal-body">
                             <div>
+                                <!--All of the text fields-->
                                 <form action="addItem"method="post">
                                     Name: <input type="text" name="name"><br>
                                     Price: <input type="text" name="price"><br>
                                     Notes: <input type="text" name="notes"><br>
                                     Date: <input type="date" name="date">
-                                    <input value="Add" type="submit" class="btn btn-primary">  
+                                    <!--Button to add the object-->
+                                    <input value="Add" type="submit" class="btn btn-primary">
+                                    <!--Button to cancel and dismiss the modal-->
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
                                 </form>
                             </div>
