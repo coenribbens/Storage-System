@@ -1,6 +1,6 @@
-datalayer/MysqlDAO.class
-model/ItemCreation.class
 controller/DefaultController.class
+config/WebInitializer.class
+model/ItemCreation.class
+datalayer/MysqlDAO.class
 config/Config.class
 datalayer/ItemDAO.class
-config/WebInitializer.class

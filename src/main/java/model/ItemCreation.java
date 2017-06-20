@@ -1,8 +1,3 @@
-/*
- * To change this license header, choose License Headers in Project Properties.
- * To change this template file, choose Tools | Templates
- * and open the template in the editor.
- */
 package model;
 
 /**
@@ -19,6 +14,13 @@ public class ItemCreation {
 
     public ItemCreation(int ID, String purchaseDate, String Name, float Price, String Notes) {
         this.ID = ID;
+        this.Name = Name;
+        this.Price = Price;
+        this.Notes = Notes;
+        this.purchasedate = purchaseDate;
+    }
+    
+    public ItemCreation(String purchaseDate, String Name, float Price, String Notes) {
         this.Name = Name;
         this.Price = Price;
         this.Notes = Notes;

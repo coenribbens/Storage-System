@@ -75,16 +75,39 @@
                         <div class="modal-body">
                             <div>
                                 <!--All of the text fields-->
-                                <form action="addItem"method="post">
+
+                                <form method="POST" action="addItem">
+                                    <div class="form-group">
+                                        <label name="name">Name</label>
+                                        <input required="true" class="form-control" name="name"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label name="dop">Date of Purchase</label>
+                                        <input required="true" class="form-control" name="dop"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label name="price">Price</label>
+                                        <input required="true" class="form-control" name="price"/>
+                                    </div>
+                                    <div class="form-group">
+                                        <label name="note">Note</label>
+                                        <input required="true" class="form-control" name="note"/>
+                                    </div>
+
+                                    <button type="submit" class="btn btn-primary">Add</button>
+                                </form>
+
+<!--                                <form action="addItem" method="post">
                                     Name: <input type="text" name="name"><br>
                                     Price: <input type="text" name="price"><br>
                                     Notes: <input type="text" name="notes"><br>
                                     Date: <input type="date" name="date">
-                                    <!--Button to add the object-->
+                                    Button to add the object
                                     <input value="Add" type="submit" class="btn btn-primary">
-                                    <!--Button to cancel and dismiss the modal-->
+                                    Button to cancel and dismiss the modal
                                     <button type="button" class="btn btn-primary" data-dismiss="modal">Cancel</button>
-                                </form>
+                                </form>-->
+
                             </div>
                         </div>
                         <div class="modal-footer">                       

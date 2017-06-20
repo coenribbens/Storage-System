@@ -34,19 +34,23 @@ public class DefaultController {
 
         return "overview";
     }
-//The preparedstatement in the controller//
+
+    // You don't need to set an ID while adding a new item. The object is just used by the DAO.
+    // The database will handle the ID using auto_increment. This object will be disposed and
+    // a object with ID will be created on redirect to the overview.
+        
     @RequestMapping(value = "/addItem", method = RequestMethod.POST)
     public String addItem(ModelMap map, HttpServletRequest request) {
 
-        int id = request.getIntHeader("ID");
         String name = request.getParameter("name");
         String dop = request.getParameter("dop");
         float price = Float.parseFloat(request.getParameter("price"));
-        String notes = request.getParameter("notes");
+        String notes = request.getParameter("note");
 
-          ItemCreation i = new ItemCreation(id, name, dop, price, notes);
-          dao.addItem(i);
-          
-          return "addItem";
+        ItemCreation i = new ItemCreation(dop, name, price, notes);
+
+        dao.addItem(i);
+
+        return "redirect:/overview";
     }
-} 
+}

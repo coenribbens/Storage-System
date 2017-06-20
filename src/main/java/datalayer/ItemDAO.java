@@ -53,26 +53,22 @@ public class ItemDAO {
         }
         return items;
     }
-   //For adding items in the database//
-    public void createItem(ItemCreation i) {
+    //For adding items in the database//
+    
+    public void addItem(ItemCreation i) {
         Connection conn = null;
         try {
             conn = MysqlDAO.getInstance().connect();
-            PreparedStatement statement = conn.prepareStatement(""+ "INSERT INTO `item` (`ID`, `name`, `dop`, `price`, `notes`) " + "VALUES   (?, ?, ?, ?, ?)");
-            statement.setInt(1, i.getID());
-            statement.setString(2, i.getName());
-            statement.setString(3, i.getPurchasedate());
-            statement.setFloat(4, i.getPrice());
-            statement.setString(5, i.getNotes());
+            PreparedStatement statement = conn.prepareStatement("" + "INSERT INTO `items` (`itemName`, `dop`, `price`, `notes`) " + "VALUES   (?, ?, ?, ?)");
+            statement.setString(1, i.getName());
+            statement.setString(2, i.getPurchasedate());
+            statement.setFloat(3, i.getPrice());
+            statement.setString(4, i.getNotes());
             statement.executeUpdate();
         } catch (SQLException ex) {
             Logger.getLogger(MysqlDAO.class.getName()).log(Level.SEVERE, null, ex);
         } finally {
-            MysqlDAO.getInstance().closeConnection(conn);   
+            MysqlDAO.getInstance().closeConnection(conn);
         }
-    }
-
-    public void addItem(ItemCreation i) {
-    
     }
 }
